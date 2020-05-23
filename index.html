@@ -1,401 +1,158 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ludo Master</title>
-        <style type="text/css">
-        body{
-        margin:1px;  
-        }
-        .goti{
-        position:float;
-        margin-left:110px;
-        margin-right:110px;
-        font-size:30px;
-        }
-        button{
-        border:none;
-        padding:8px;
-        margin:3px;
-        color:white;
-        box-shadow:0 0 8px 0 rgba(0,0,0,0.5);
-        }
-        button.groll{
-        background-color:green;
-        }
-        button.rroll{
-        margin-left:2%;
-        background-color:red;
-        }
-        .board{
-        height:480px;
-        width:100%;
-        background:#ffffbf;
-        }
-        #home{
-        height:100px;
-        width:100px;
-        background-color:pink;
-        }
-        table{
-        text-align:center;
-        font-size:30px;
-        border-spacing:0;
-        padding:0;
-        }
-        span{
-        animation:rota 3s linear infinite;
-        }
-        @keyframes rota{
-        0%{}
-        25%{transform:rotate(60deg);}
-        50%{transform:rotate(150deg);}
-        75%{transform:rotate(250deg);}
-        100%{transform:rotate(350deg);}
-        }
-        td{
-        height:55px;
-        width:25%;
-        padding:5px;
-        min-width:55px;
-        }
-        h.hh1{
-        animation: hh1anim 3s linear infinite;
-        }
-        h.hh2{
-        animation:hh2anim 3s linear infinite;
-        }
-        h.hh3{
-        animation:hh3anim 3s linear infinite; 
-        }
-        @keyframes hh1anim{
-        0%{color:red;}
-        50%{color:green}
-        100%{color:blue}
-        }
-        @keyframes hh2anim{
-        0%{color:blue;}
-        50%{color:red}
-        100%{color:green}
-        }
-        @keyframes hh3anim{
-        0%{color:green;}
-        50%{color:blue}
-        100%{color:red}
-        }
-        #td1{
-        border-bottom:solid blue 2px;
-        border-top:solid blue 2px;
-        border-left:solid blue 2px;
-        }
-        
-        
-        #td2{
-        border-bottom:solid blue 2px;
-        border-top:solid blue 2px;
-        border-left:solid blue 2px;
-        }
-        
-        #td3{
-        border-bottom:solid blue 2px;
-        border-top:solid blue 2px;
-        border-left:solid blue 2px;
-        }
-        #td4{
-        border-bottom:solid blue 2px;
-        border-left:solid blue 2px;
-        }
-        
-        #td5{
-        border-left:solid blue 2px;
-        border-bottom:solid blue 2px;
-        background-color:#ff5722;
-        
-        }
-        #td6{
-        border-bottom:solid blue 2px;
-        border-left:solid blue 2px;
-        
-        }
-        #td7{
-        border-bottom:solid blue 2px;
-        border-left:solid blue 2px;
-        }
-        #td8{
-        border-left:solid blue 2px;
-        border-bottom:solid #64dd17 2px;
-        background-color:#ff5722;   
-        }
-        #td9{
-        border-left:solid blue 2px;
-        border-bottom:solid #64dd17 2px;   
-        }
-        #td10{
-        border-left:solid blue 2px;
-        border-bottom:solid #64dd17 2px; 
-        border-right:solid blue 2px;  
-        }
-        #td11{
-        border-bottom:solid blue 2px; 
-        border-right:solid blue 2px;  
-        }
-        #td12{
-        border-bottom:solid blue 2px; 
-        border-left:solid blue 2px; 
-        }
-        #rh1{
-        border:solid red 2px;
-        }
-        #rh2{
-        border-top:solid red 2px;
-        border-bottom:solid red 2px;
-        border-right:solid red 2px;
-        }
-        #rh3{
-        border-bottom:solid red 2px;
-        border-right:solid red 2px;
-        border-left:solid red 2px;
-        }
-        #rh4{
-        border-bottom:solid red 2px;
-        border-right:solid red 2px;
-        }
-        #win1{
-        border-left:solid #64dd17 2px;
-        border-bottom:solid #64dd17 2px;
-        }
-        #win2{
-        border-bottom:solid #64dd17 2px;
-        }
-        #win3{
-        border-bottom:solid #64dd17 2px;
-        border-right:solid #64dd17 2px; 
-        }
-        #td13{
-        border-right:solid blue 2px;
-        border-bottom:solid blue 2px;
-        }
-        #td14{
-        border-bottom:solid green 2px;
-        border-left:solid blue 2px;
-        }
-        #td15{
-        border-left:solid blue 2px;
-        border-bottom:solid green 2px;   
-        }
-        #td16{
-        border-left:solid blue 2px;
-        border-bottom:solid blue 2px; 
-        }    
-        #td17{
-        border-left:solid blue 2px;
-        border-bottom:solid blue 2px; 
-        border-right:solid blue 2px; 
-        background-color:#4caf50; 
-        }
-        #td18{
-        border-bottom:solid blue 2px; 
-        border-right:solid blue 2px;  
-        }
-        #gh1{
-        border-left:solid green 2px; 
-        border-bottom:solid green 2px;
-        
-        }
-        #gh2{
-        border-left:solid green 2px;
-        border-bottom:solid green 2px;
-        }
-        #gh3{
-        border-left:solid green 2px;
-        border-bottom:solid green 2px;
-        }
-        #gh4{
-        border-left:solid green 2px;
-        border-bottom:solid green 2px;
-        }
-        #td19{
-        border-left:solid green 2px;
-        border-bottom:solid blue 2px;
-        }
-        #td20{
-        border-left:solid blue 2px; 
-        border-bottom:solid blue 2px;
-        border-right:solid blue 2px; 
-        background-color:#4caf50; 
-        }
-        #td21{
-        border-bottom:solid blue 2px;
-        border-right:solid blue 2px;
-        }
-        #td22{
-        border-bottom:solid blue 2px;
-        border-left:solid green 2px;
-        }
-        #td23{
-        border-bottom:solid blue 2px;
-        border-left:solid blue 2px;
-        border-right:solid blue 2px;
-        }
-        #td24{
-        border-bottom:solid blue 2px;
-        border-right:solid blue 2px;
-        }
-        #rdb{
-        border-radius:50%;
-        height:30px;
-        width:30px;
-        background-color:red;
-        }
-        #gb{
-        border-radius:50%;
-        height:30px;
-        width:30px;
-        background-color:green; 
-        }
-        img.aro1{
-        left:50%;
-        top:145px;
-        position:absolute;
-        height:50px;
-        transform:rotate(15deg);
-        animation:aroanim 6s linear infinite;
-        
-        }
-        
-        img.aro2{
-        left:20%;
-        top:280px;
-        position:absolute;
-        height:50px;
-        transform:rotate(195deg);
-        animation:aroanim2 6s linear infinite;
-        }
-        
-        @keyframes aroanim{
-        0%{left:50%;}
-        25%{left:55%;} 
-        50%{left:60%;}
-        100%{left:65%;}
-        }
-        img.aro3{
-        top:20%;
-        right:73%;
-        position:absolute;
-        height:50px;
-        transform:rotate(285deg);
-        animation:aroanim3 4s linear infinite;
-        }
-        img.aro4{
-        top:60%;
-        left:74%;
-        position:absolute;
-        height:50px;
-        transform:rotate(105deg);
-        animation:aroanim4 4s linear infinite;
-        }
-        @keyframes aroanim2{
-        0%{left:25%;}
-        25%{left:20%;} 
-        50%{left:15%;}
-        100%{left:10%;}
-        }
-        
-        @keyframes aroanim3{
-        0%{top:25%;}
-        25%{top:20%;} 
-        50%{too:15%;}
-        100%{top:10%;}
-        
-        }
-        @keyframes aroanim4{
-        0%{top:60%;}
-        25%{top:65%;} 
-        50%{too:70%;}
-        100%{top:75%;}
-        
-        
-        </style>
-        <script type="text/javascript">
-        function gclick(){
-        //alert("Green Clicked");
-        var goti= document.getElementById("goti");
-        num = Math.floor(Math.random()*(9862-9856)+9856);
-        goti.innerHTML="&#"+num;
-        }
-        
-        function rclick(){
-        goti = document.getElementById("goti");
-        num = Math.floor(Math.random()*(9862-9856)+9856);
-        goti.innerHTML="&#"+num;
-        }
-        </script>
+        <title>Point Game</title>
+       <script src="https://code.jquery.com/jquery-3.1.1.js"></script> 
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <style type="text/css">
+       body {
+       background-color:#303030; 
+       }
+       table{
+       width:100%;
+       }
+       table,th,td{
+       border:solid #a0a000 2px;
+       color:white;
+       border-collapse:collapse;
+       text-align:center;
+       padding:5px;
+       }
+       div{
+       width:100%;  
+       }
+       button{
+       padding:5px;
+       margin:29px;
+       box-shadow:0 0 10px 1px pink;
+       color:red;
+       }
+       button:hover{
+       background-color:#0f0f0f;   
+       }
+       h2{
+       color:#ff00ff;
+       }
+       </style>
+       <script type="text/javascript">
+       $(function(){
+       //var p = $("#pkm").html()
+       $tp=0;
+       $tamn =0;
+       $takt=0;
+       $i =1;
+       $j =1;
+       $k =1;
+       $("#pkm").click(function() {
+       var pkmn = 1 + Math.floor(Math.random() * 10);
+       $tp = $tp+pkmn
+       var id = "#p"+$i;
+       $(id).text(pkmn);
+       $("#view").text(pkmn);
+       $("#pkm").prop('disabled',true);
+       $("#akt").prop('disabled',false);
+       $i = $i+1;
+       });
+       
+       $("#amn").click(function() {
+       var amnn = 1 + Math.floor(Math.random() * 10);
+       $tamn = $tamn+amnn;
+       var id = "#am"+$j;
+       $(id).text(amnn)
+       $("#view").text(amnn)
+       $("#amn").prop('disabled',true);
+       $("#pkm").prop('disabled',false);
+       $j = $j+1;
+       });
+       
+       
+       $("#akt").click(function() {
+       var aktn = 1 + Math.floor(Math.random() * 10);
+       $takt = $takt +aktn;
+       var id = "#ak"+$k;
+       $(id).text(aktn)
+       $("#view").text(aktn)
+       $("#akt").prop('disabled',true);
+       $("#amn").prop('disabled',false);
+       $k = $k+1;
+       if($k==11){
+       $("#pkf").text($tp);
+       $("#amf").text($tamn);
+       $("#akf").text($takt);}
+       });
+       });
+       </script>
     </head>
     <body>
-      <div class = "board">
-      <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arrow_PPP_symbol.png/800px-Arrow_PPP_symbol.png" class ="aro1">
-      <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arrow_PPP_symbol.png/800px-Arrow_PPP_symbol.png" class ="aro2">
-      <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arrow_PPP_symbol.png/800px-Arrow_PPP_symbol.png" class = "aro3">
-      <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Arrow_PPP_symbol.png/800px-Arrow_PPP_symbol.png" class = "aro4">
-          <table>
-                <tr>
-                    <td id="td1"></td>
-                    <td id ="td2"></td>
-                    <td id = "td3"><span></span>&#9958</span></td>
-                    <td id ="rh1"><canvas id = "rdb"></canvas></td>
-                    <td id = "rh2"><canvas id = "rdb"></canvas></td>
-                </tr> 
-                <tr>
-                    <td id = "td4"></td>
-                    <td id = "td5"></td>
-                    <td id = "td6"></td>
-                    <td id ="rh3"><canvas id = "rdb"></canvas></td>
-                    <td id = "rh4"><canvas id = "rdb"></canvas></td>
-                </tr> 
-                <tr>
-                    <td id = "td7"></td>
-                    <td id = "td8"></td>
-                    <td id = "td9"></td>
-                    <td id = "td10"></td>
-                    <td id = "td11"></td>
-                </tr>
-                <tr>
-                    <td id = td12><span>&#9958</span></td>
-                    <td id = "win1"><h class  = "hh1">W</h></td>
-                    <td id = "win2"><h class = "hh2">I</h></td>
-                    <td id = "win3"><h class = "hh3">N</h></td>
-                    <td id = "td13"><span>&#9958</span></td>
-                </tr>
-                <tr>
-                    <td id = "td14"></td>
-                    <td id = "td15"></td>
-                    <td id = "td16"></td>
-                    <td id = "td17"></td>
-                    <td id = "td18"></td>
-                </tr>
-                <tr>
-                    <td id = "gh1"><canvas id = "gb"></canvas></td>
-                    <td id = "gh2"><canvas id = "gb"></canvas></td>
-                    <td id = "td19"></td>
-                    <td id = "td20"></td>
-                    <td id = "td21"></td>
-                </tr>
-                <tr>
-                    <td id = "gh3"><canvas id = "gb"></canvas></td>
-                    <td id = "gh4"><canvas id = "gb"></canvas></td>
-                    <td id = "td22"><span>&#9958</span></td>
-                    <td id = "td23"></td>
-                    <td id = "td24"></td>
-                </tr>
-          </table>
-      </div>
-      <div>
-      <tr><nobr>
-          <button class ="groll" onclick ="gclick()">Roll</button>
-          <h class = "goti" id ="goti">&#9856</h>
-          <button class ="rroll" onclick ="rclick()">Roll</button>
-          </nobr>
-          </tr>
-      </div>
+       <table>
+       <tr>
+           <th>Pradeep</th>
+           <th>Aman</th>
+           <th>Ankit</th>
+        </tr>
+        <tr>
+            <td id = "p1"></td>
+            <td id = "am1"></td>
+            <td id = "ak1"></td>
+        </tr>
+        <tr>
+            <td id = "p2"></td>
+            <td id = "am2"></td>
+            <td id = "ak2"></td>
+        </tr>
+        <tr>
+            <td id = "p3"></td>
+            <td id = "am3"></td>
+            <td id = "ak3"></td>
+        </tr>
+        <tr>
+            <td id = "p4"></td>
+            <td id = "am4"></td>
+            <td id = "ak4"></td>
+        </tr>
+        <tr>
+            <td id = "p5"></td>
+            <td id = "am5"></td>
+            <td id = "ak5"></td>
+        </tr>
+        <tr>
+            <td id = "p6"></td>
+            <td id = "am6"></td>
+            <td id = "ak6"></td>
+        </tr>
+        <tr>
+            <td id = "p7"></td>
+            <td id = "am7"></td>
+            <td id = "ak7"></td>
+        </tr>
+        <tr>
+            <td id = "p8"></td>
+            <td id = "am8"></td>
+            <td id = "ak8"></td>
+        </tr>
+        <tr>
+            <td id = "p9"></td>
+            <td id = "am9"></td>
+            <td id = "ak9"></td>
+        </tr>
+        <tr>
+            <td id = "p10"></td>
+            <td id = "am10"></td>
+            <td id = "ak10"></td>
+        </tr>
+        <tr>
+            <th id = "pkf"></th>
+            <th id = "amf"></th>
+            <th id = "akf"></th>
+        </tr>
+       </table>
+       <div>
+           <button id = "pkm">Pradeep</button>
+           <button id = "amn">Aman</button>
+           <button id = "akt"'>Ankit</button>
+       </div>
+       <div>
+           <center><h2 id = "view"></h2></center>
+       </div>
     </body>
 </html>
